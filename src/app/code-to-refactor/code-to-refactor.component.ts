@@ -3,22 +3,28 @@ import {Globals} from '../helpers/globals';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-code-to-refactor',
+  templateUrl: './code-to-refactor.component.html',
+  styleUrls: ['./code-to-refactor.component.css']
 })
-export class AppComponent {
+export class CodeToRefactorComponent {
   items: Array<Item>;
 
+  // constructor(items = [] as Array<Item>) {
+  //   this.items = items;
+  // }
 
-  constructor(items = [] as Array<Item>) {
-    this.items = items;
+
+  constructor() {
+    this.items = [
+      new Item('d', 2, 2),
+    ];
   }
 
   updateQuality() {
     for (let item of this.items) {
       if (Globals.Dictionary.toString().includes(item.name) || Globals.Methods.between(item.quality, 0, 50)) {
-          item.quality += this.changeQualityIfLowSell(item.sellIn, item.quality);
+        item.quality += this.changeQualityIfLowSell(item.sellIn, item.quality);
       } else {
         item.quality -= 1;
       }
@@ -31,7 +37,7 @@ export class AppComponent {
   }
 
   changeQualityIfLowSell(sellIn: number, quality: number): number {
-    if (quality === 49 ) {
+    if (quality === 49) {
       return 1;
     } else {
       return (sellIn < 11 ? ((sellIn < 6 ? 3 : 2)) : 1);

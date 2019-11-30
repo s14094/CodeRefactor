@@ -1,4 +1,10 @@
-refactor
-<p>
- {{items}}
-</p>
+<div *ngFor="let item of items">
+  {{item.name}}
+  {{item.sellIn}}
+  {{item.quality}}
+</div>
+
+
+<button (click)="updateQuality()">
+  Click
+</button>

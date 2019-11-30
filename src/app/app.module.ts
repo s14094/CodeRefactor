@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CodeToRefactorComponent } from './code-to-refactor/code-to-refactor.component';
+import {CodeToRefactorComponent} from './code-to-refactor/code-to-refactor.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { CodeToRefactorComponent } from './code-to-refactor/code-to-refactor.com
     CodeToRefactorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
